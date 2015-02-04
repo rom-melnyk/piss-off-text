@@ -24,6 +24,10 @@
 			if (_cfg.distortion.v !== undefined) { CFG.distortion.v = +_cfg.distortion.v || 0; }
 			if (_cfg.distortion.h !== undefined) { CFG.distortion.h = +_cfg.distortion.h || 0; }
 		}
+		if (_cfg.vDistortion !== undefined) { CFG.distortion.v = +_cfg.vDistortion || 0; }
+		if (_cfg['v-distortion'] !== undefined) { CFG.distortion.v = +_cfg['v-distortion'] || 0; }
+		if (_cfg.hDistortion !== undefined) { CFG.distortion.h = +_cfg.hDistortion || 0; }
+		if (_cfg['h-distortion'] !== undefined) { CFG.distortion.h = +_cfg['h-distortion'] || 0; }
 
 		return CFG;
 	};
@@ -39,8 +43,14 @@
 	};
 
 	var _splitText = function (text, level) {
-		var sep = level === 'letters' ? '' : ' ';
-		return ret = (text || '').split(sep);
+		var sep = level === 'letters' ? '' : ' ',
+			ret = (text || '').split(sep);
+		if (level === 'words') {
+			ret = ret.map(function (w) {
+				return w + ' ';
+			});
+		}
+		return ret;
 	};
 
 	var _wrapInSpan = function (text) {
