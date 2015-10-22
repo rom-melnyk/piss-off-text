@@ -12,8 +12,8 @@ This is the script that plays witht text kerning and brings the headache to the 
    This allows to patch the particular _part_ of the page, not the entire one.  
    Defaults to `"p"`.
   * **level** &mdash; one of `"letters"` (default) or `"words"`. Means how deep the distortion will work.
-  * **distortion** &mdash; is the object that contains one or both of `"v"` and `"h"`properties. It describes the distortion amplitude: **0** leaves the chunks untouched, **100** shuffles 'em hard.  
-   Defauls to `{v: 0, h: 50}`.
+  * **distortion** &mdash; is the object that contains one or both of `"v"` and `"h"`properties. It describes the distortion amplitude: **0** leaves the chunks untouched, **100** does the Harlem shake.  
+   Defauls to `{v: 0, h: 10}`.
 
 ## Inspered by
 ![How to piss off your designer friends](http://i.imgur.com/9uspHVL.jpg)
